@@ -1,0 +1,18 @@
+{{ define "head" }}
+<meta name="description" content={{ .Site.Params.description }}>
+<link rel="stylesheet" href="/css/index.css" media="all">
+
+<!-- font-awesome-5.15.4 -->
+<script defer src="/js/all.js"></script>
+{{ end }}
+
+{{ define "title" }}
+{{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+
+<!-- home -->
+{{- partial "sections/home/index.html" . -}}
+
+{{ end }}

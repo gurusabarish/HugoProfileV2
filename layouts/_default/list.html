@@ -1,0 +1,88 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
+{{ end }}
+
+{{ define "title" }}
+{{.Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section>
+    <div class="container-fluid">
+        <div class="row pt-3 justify-content-center">
+            <!-- list view-->
+            <div class="col-lg-6 col-md-6">
+                {{ range .Paginator.Pages }}
+                <div class="mb-4">
+                    <div class="card border-bottom-primary pb-2">
+                        {{ if .Params.tags }}
+                        <h5 class="card-header m-0">
+                            {{ if .Params.tags }}
+                            {{ range .Params.tags }}
+                            <a href={{ "/tags/" | relLangURL }}{{ . | urlize }} class="btn btn-info btn-rounded mb-2">{{
+                                . }}</a>
+                            {{ end }}
+                            {{ end }}
+                        </h5>
+                        {{ end }}
+                        <a class="text-decoration-none" href="{{ .RelPermalink }}">
+                            <div class="card-body">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{ .Title }}
+                                </div>
+                                <div class="text-muted py-2">
+                                    {{ .Params.description }}
+                                </div>
+                                <div class="text-dark">
+                                    <span class="px-1">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar"
+                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
+                                            <path fill-rule="evenodd"
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z" />
+                                        </svg>
+                                    </span>
+                                    {{ dateFormat "Jan 2, 2006" .Date }}
+                                    {{ if .Params.author }}
+                                    <span class="px-1">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill"
+                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                    </span>
+                                    {{ .Params.author }}
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {{ end }}
+
+                <!-- internal hugo Pagination -->
+                {{ template "_internal/pagination.html" . }}
+
+                <!-- frontend for the Pagination -->
+                <div class="row justify-content-center pt-3">
+                    <div class="col-lg-7 col-md-7">
+                        <div class=" mb-4">
+                            <div class="card p-0">
+                                <h5 class="card-header m-0 btn-outline-danger">Tags</h5>
+                                <div class=" card-body">
+                                    {{range $name, $taxonomy := .Site.Taxonomies.tags}}
+                                    {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+                                    <a href="{{ .RelPermalink }}"
+                                        class="btn btn-outline-danger rounded-pill mb-2">{{$name}}</a>
+                                    {{end}}
+                                    {{end}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

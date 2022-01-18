@@ -1,0 +1,21 @@
+<div class="profile pt-4">
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="pt-3 text-center">
+                {{ if .Site.Params.profile.image }}
+                <img src="{{ .Site.Params.profile.image }}" width="200" height="200" alt="{{ .Site.Params.name }}"
+                    class="rounded">
+                {{ end }}
+                <div class="profile-name font-weight-bold text-secondary">
+                    {{ .Site.Params.profile.name }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        {{- partial "sections/home/profile/socialNetwork.html" . -}}
+
+        <!-- Bio -->
+        {{- partial "sections/home/profile/bio.html" . -}}
+    </div>
+</div>

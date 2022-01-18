@@ -1,0 +1,57 @@
+/* profile */
+.profile {
+  height: auto;
+}
+
+.profile-name {
+  font-size: 27px;
+}
+
+.profile-social a {
+  text-decoration: none;
+}
+
+.bio-content {
+  font-family: serif;
+  font-size: 20px;
+}
+
+.bio-content a:hover {
+  text-decoration-line: none;
+  color: black;
+}
+
+/* Things I do */
+.do-things {
+  height: auto;
+  padding: 0;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.things-i-do {
+  font-family: "Alata", sans-serif;
+  font-size: 25px;
+}
+
+.things {
+  height: auto;
+}
+
+.things-text {
+  height: 100px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .things-i-do {
+    padding-top: 7% !important;
+  }
+
+  .do-things-card {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 0%;
+    padding-top: 0%;
+  }
+}

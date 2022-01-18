@@ -1,0 +1,24 @@
+{{ define "head" }}
+<meta name="description" content={{ .Site.Params.description }}>
+{{ end }}
+
+{{ define "title" }}
+404 page not found | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<div class="container">
+    <div class="row justify-centent-center py-5">
+        <div class="display-4 font-weight-bold text-center col p-5">
+            {{ if eq .Site.Params.version 3 }}
+            <span class="text-dark">404 page not found</span>
+            {{ else }} 404 page not found {{ end }}
+            <div class="text-center p-5">
+                <a href="{{ .Site.BaseURL }}" class="btn btn-primary rounded-pill p-3">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

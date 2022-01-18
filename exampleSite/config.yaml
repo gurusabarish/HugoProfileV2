@@ -1,0 +1,93 @@
+baseURL: "https://hugo-profile-2.netlify.app"
+languageCode: "en-us"
+title: "HugoProfileV2"
+
+# pagination limit
+Paginate: 3
+
+# Enable emoji
+enableEmoji: true
+
+# menus
+Menus:
+  main:
+    - identifier: about
+      name: About
+      title: About Me
+      url: /#
+      weight: 1
+    - identifier: blog
+      name: Blog
+      title: Blog posts
+      url: /blog
+      weight: 2
+
+    #Dropdown menu
+    # - identifier: dropdown
+    #   title: Example dropdown menu
+    #   name: Dropdown
+    #   weight: 3
+    # - identifier: dropdown1
+    #   title: example dropdown 1
+    #   name: example 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   title: example dropdown 2
+    #   name: example 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
+
+params:
+  title: "HugoProfileV2"
+  description: Text about my cool site
+  favicon: "/images/fav.png"
+
+  # profile
+  profile:
+    name: "Profile"
+    image: "/images/profile.webp"
+    bio: Hi, I’m Profile, a passionate web developer. I tend to make use of modern web technologies to build websites that looks great, feels fantastic, and functions correctly. This is a example template for about section.
+
+    # Document
+    docs:
+      link: "https://example.com"
+      # If you want to change the text of the link use below line
+      # name: asd
+
+    # Social links
+    # social:
+    #   github: "https://github.com"
+    #   linkedin: "https://linkedin.com"
+    #   twitter: "https://twitter.com/"
+    #   instagram: "https://instagram.com/"
+    #   facebook: "https://facebook.com"
+
+  ThingsIdo:
+    enable: true
+    title: "Things I do"
+    things:
+      - logo: fab fa-python
+        name: Python
+        description: I build something beautiful using Python.
+        #url: https://example.com
+
+      - logo: fas fa-robot
+        name: Machine learning
+        description: I train robust models for various tasks.
+        #url: https://example.com
+
+      - logo: fab fa-html5
+        name: Things for web
+        description: I love to build things for web
+        url: https://example.com
+  footer:
+    socialNetworks:
+      github: "https://github.com"
+      linkedin: "https://linkedin.com"
+      twitter: "https://twitter.com/"
+      instagram: "https://instagram.com/"
+      facebook: "https://facebook.com"
+    recentPosts: true
