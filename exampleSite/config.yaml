@@ -1,6 +1,8 @@
 baseURL: "https://example.com"
 languageCode: "en-us"
 title: "HugoProfileV2"
+themesDir: "../.."
+theme: "HugoProfileV2"
 
 # pagination limit
 Paginate: 3
